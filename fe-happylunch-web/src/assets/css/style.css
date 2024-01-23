@@ -1,0 +1,22 @@
+#date {
+  background-color: white;
+  font-weight: bold;
+  width: 80%;
+  padding: 0.55rem;
+  padding-left: 2.5rem;
+}
+@media not all and (min-width: 640px) {
+  #date:placeholder-shown {
+    font-size: 0px !important;
+  }
+  .pointer-events-none .text-gray-500 {
+    margin-left: 4px;
+  }
+  #date{
+    width: 100%
+  }
+}
+
+.pointer-events-none .text-gray-500 {
+  color: #007aff;
+}

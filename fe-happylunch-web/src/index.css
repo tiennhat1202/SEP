@@ -1,0 +1,356 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+/* Define font-family using the imported font */
+.ant-tour-buttons .ant-btn {
+  background-color: #1677ff !important ;
+  color: white !important;
+}
+body {
+  font-family: 'Quicksand', sans-serif;
+  ::-webkit-scrollbar {
+    width: 3px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+}
+
+.guZdik {
+  height: 70px !important;
+  width: 490px;
+}
+
+.fui-dropzone-root {
+  width: 200px;
+}
+
+.delete-button {
+  display: none;
+  position: absolute;
+  top: -10px;
+  right: 10px;
+  color: gray;
+  padding: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.image-container {
+  position: relative;
+}
+
+.image-container:hover .delete-button {
+  display: block;
+  margin-right: 21.8rem;
+}
+
+.modal {
+  width: 100%;
+  font-size: 12px;
+}
+.modal > .header {
+  width: 100%;
+  border-bottom: 1px solid gray;
+  font-size: 18px;
+  text-align: center;
+  padding: 5px;
+}
+.popup-content {
+  width: 30% !important;
+}
+.modal > .content {
+  width: 100%;
+  padding: 10px 5px;
+  font-size: 20px;
+  text-align: center;
+  color: red;
+}
+.modal > .actions {
+  width: 100%;
+  padding: 10px 5px;
+  margin: auto;
+  text-align: center;
+}
+.modal > .close {
+  cursor: pointer;
+  position: absolute;
+  display: block;
+  padding: 2px 5px;
+  line-height: 20px;
+  right: -10px;
+  top: -10px;
+  font-size: 24px;
+  background: #ffffff;
+  border-radius: 18px;
+  border: 1px solid #cfcece;
+}
+
+.loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.loading-content {
+  text-align: center;
+  color: #fff;
+}
+
+.loading-content img {
+  width: 100px;
+  height: 100px;
+}
+
+.data-content {
+  display: none;
+  /* Đây là nơi bạn sẽ hiển thị dữ liệu sau khi tải xong */
+}
+
+.status-0 {
+  background-color: rgba(
+    181,
+    123,
+    255,
+    0.1
+  ); /* or any style you want for 'Todo' status */
+  color: #b57bff;
+  border-radius: 5px;
+  padding: 3px 10px;
+  border: 1px solid #b57bff;
+  font-weight: bold;
+}
+
+.status-1 {
+  background-color: rgba(
+    45,
+    204,
+    255,
+    0.1
+  ); /* or any style you want for 'InProgress' #90eeed */
+  color: #2dccff;
+  border-radius: 5px;
+  padding: 3px 10px;
+  font-weight: bold;
+  border: 1px solid #2dccff;
+}
+
+.status-2 {
+  background-color: rgba(
+    255,
+    179,
+    2,
+    0.1
+  ); /* or any style you want for 'Waiting' status */
+  color: #ffb302;
+  border-radius: 5px;
+  padding: 3px 10px;
+  font-weight: bold;
+  border: 1px solid #ffb302;
+}
+
+.status-3 {
+  background-color: rgba(
+    86,
+    240,
+    0,
+    0.1
+  ); /* or any style you want for 'Done' status */
+  color: #56f000;
+  border-radius: 5px;
+  padding: 3px 10px;
+  font-weight: bold;
+  border: 1px solid #56f000;
+}
+
+.status--1 {
+  background-color: rgba(
+    255,
+    56,
+    56,
+    0.1
+  ); /* or any style you want for 'Cancel' status */
+  color: #ff3838;
+  border-radius: 5px;
+  padding: 3px 10px;
+  font-weight: bold;
+  border: 1px solid #ff3838;
+}
+
+.App {
+  text-align: center;
+  padding-top: 1rem;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1040;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000;
+  opacity: 0.5;
+}
+
+.modal-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1050;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  outline: 0;
+}
+
+.modal {
+  z-index: 100;
+  background: white;
+  position: relative;
+  /* margin: 14.75rem auto; */
+  border-radius: 10px;
+  /* max-width: 960px; */
+  padding: 2rem;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.modal-close-button {
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1;
+  color: #000;
+  opacity: 0.3;
+  cursor: pointer;
+  border: none;
+}
+
+/* CSS for the card hover effect */
+.popup-w-64 {
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.popup-w-64:hover {
+  transform: scale(1.05);
+}
+
+.popup-w-64 .card-content {
+  position: relative;
+  z-index: 1;
+  transition: all 0.3s;
+}
+
+.popup-w-64 .card-popup {
+  display: block;
+  position: absolute;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+  text-align: center;
+  transition: all 0.3s;
+}
+
+.popup-w-64:hover .card-popup {
+  top: 100px;
+}
+
+.popup-w-64:hover .card-content {
+  filter: blur(2px);
+}
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  border: 3px solid;
+  border-color: #fff #fff transparent;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+.loader::after {
+  content: '';
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  border: 3px solid;
+  border-color: transparent #ff3d00 #ff3d00;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  animation: rotationBack 0.5s linear infinite;
+  transform-origin: center center;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotationBack {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+.chartjs-tooltip {
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  position: absolute;
+  border-radius: 10px;
+  padding: 6px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transform: translateX(-100%);
+  min-width: 150px;
+}
+
+.ant-picker-ok .ant-btn {
+  background-color: #1677ff !important ;
+  color: white !important;
+}
+
+.sticky-cart {
+  position: sticky;
+  top: 100px; 
+  will-change: transform;
+}
